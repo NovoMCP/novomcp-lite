@@ -1,0 +1,46 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "novomcp-lite"
+dynamic = ["version"]
+description = "The open-source cheminformatics tool subset of NovoMCP — RDKit properties/profiling + public-API search, as a library or over MCP."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "NovoMCP (Quant NexusAI Inc.)" }]
+keywords = ["cheminformatics", "rdkit", "drug-discovery", "mcp", "chembl", "molecular-properties"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: Apache Software License",
+    "Programming Language :: Python :: 3",
+    "Topic :: Scientific/Engineering :: Chemistry",
+]
+dependencies = [
+    "rdkit>=2023.9",
+    "httpx>=0.25",
+]
+
+[project.optional-dependencies]
+mcp = ["mcp>=1.2"]
+dev = ["pytest>=8.0", "pytest-asyncio>=0.24", "anyio>=4.0"]
+
+[project.scripts]
+novomcp-lite = "novomcp_tools.server:main"
+
+[project.urls]
+Homepage = "https://github.com/NovoMCP/novomcp-lite"
+Engine = "https://github.com/NovoMCP/novomcp"
+
+[tool.hatch.version]
+path = "novomcp_tools/__init__.py"
+
+[tool.hatch.build.targets.wheel]
+packages = ["novomcp_tools"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+markers = ["network: test hits a live public API (skipped in offline CI)"]
