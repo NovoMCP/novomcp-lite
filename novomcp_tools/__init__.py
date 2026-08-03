@@ -11,7 +11,7 @@ services, no keys.
 from .chem import compute_properties, compute_sa_score, molecule_profile, structural_alerts
 from .registry import TOOLS, ToolResult, call_tool, get_tool, list_tools
 
-__version__ = "0.1.0"
+__version__ = "0.1.1"
 
 __all__ = [
     "__version__",
