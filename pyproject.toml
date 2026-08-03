@@ -25,7 +25,7 @@ dependencies = [
 ]
 
 [project.optional-dependencies]
-mcp = ["mcp>=1.2"]
+mcp = ["mcp>=1.2,<2"]
 dev = ["pytest>=8.0", "pytest-asyncio>=0.24", "anyio>=4.0"]
 
 [project.scripts]
