@@ -2,7 +2,7 @@
 
 The lite profile is the fully in-process subset of the engine's
 `get_molecule_profile`: physicochemical properties, SA score, and RDKit
-structural alerts. ADMET prediction and FAVES compliance are engine/service
+structural alerts. ADMET prediction and compliance screening are engine/service
 features and are intentionally NOT part of this package.
 """
 from __future__ import annotations

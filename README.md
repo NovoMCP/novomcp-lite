@@ -45,7 +45,7 @@ Point any MCP client (Claude Desktop, an agent, …) at that command and the eig
 
 ## What's intentionally *not* here
 
-`novomcp-lite` is the **thin, open subset**. ADMET prediction, docking, molecular dynamics, quantum chemistry, FAVES compliance, the 122M-molecule index, and the autonomous discovery funnel live in the full [NovoMCP engine](https://github.com/NovoMCP/novomcp) and its optional compute services. Lite deliberately carries none of that weight — or its dependencies.
+`novomcp-lite` is the **thin, open subset**. ADMET prediction, docking, molecular dynamics, quantum chemistry, compliance screening, the 122M-molecule index, and the autonomous discovery funnel live in the full [NovoMCP engine](https://github.com/NovoMCP/novomcp) and its optional compute services. Lite deliberately carries none of that weight — or its dependencies.
 
 ## Relationship to the full engine
 
