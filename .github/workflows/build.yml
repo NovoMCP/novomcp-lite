@@ -8,9 +8,13 @@ on:
 
 jobs:
   test:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false
       matrix:
+        # ubuntu-24.04-arm = linux/aarch64, the same arch as an NVIDIA DGX Spark
+        # (GB10) — keeps `pip install novomcp-lite` verified on arm64, not assumed.
+        os: [ubuntu-latest, ubuntu-24.04-arm]
         python-version: ["3.10", "3.11", "3.12"]
     steps:
       - uses: actions/checkout@v4
